@@ -1,13 +1,16 @@
-DATA_DIR   = 'C:\DATA\Programming\computer_vision\Automatic_Number_Plate_Recognition\data'
-OUTPUT_DIR = 'C:\DATA\Programming\computer_vision\Automatic_Number_Plate_Recognition\output'
-LOSS_JPG   = 'assets\loss.jpg'
+BASE_PATH    = 'static'
+UPLOAD_PATH  = f'{BASE_PATH}\\upload'
+PREDICT_PATH = f'{BASE_PATH}\\predict'
+ROI_PATH     = f'{BASE_PATH}\\roi'
 
-BATCH_SIZE   = 16
-N_EPOCHS     = 30
-RANDOM_STATE = 0
+YOLO_WEIGHT = 'yolov3\\yolov3.weights'
+YOLO_CONFIG = 'yolov3\\yolov3.cfg'
 
-LABELS_CSV      = f'{DATA_DIR}\\labels.csv'
-IMAGES_DIR      = f'{DATA_DIR}\\images'
-ANNOTATIONS_DIR = f'{DATA_DIR}\\annotations'
+CONF_THRESHOLD = 0.5
+NMS_THRESHOLD  = 0.4
 
-MODEL = f'{OUTPUT_DIR}\\object_detection.h5'
+COLOR = (0, 0, 255)
+SCALE = 0.00392
+
+HOST = '0.0.0.0'
+PORT = '5000'
