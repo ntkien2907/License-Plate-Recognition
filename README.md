@@ -2,8 +2,8 @@
 
 
 ### Introduction
-License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate. License plate detection and recognition is the technology that uses computer vision to detect and recognize a license plate from an input image of a car. This technology is applied in many areas.
-<p align='middle'><img src='./assets/applications.png' width=75% /></p>
+License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate. License plate detection and recognition is the technology that uses computer vision to detect and recognize a license plate from an input image of a car.
+<p align='middle'><img src='./assets/applications.png' width=100% /></p>
 
 ---
 ### Setup
@@ -23,7 +23,7 @@ License plate detection is identifying the part of the car that is predicted to 
     ```
     python app.py
     ```
-<p align='middle'><img src='./assets/demo.png' width=75% /></p>
+<p align='middle'><img src='./assets/demo.png' width=100% /></p>
 
 ---
 ### References
