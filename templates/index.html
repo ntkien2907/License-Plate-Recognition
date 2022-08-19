@@ -13,41 +13,29 @@
 {% if upload %}
 <div class="container">
   <br />
-  <table>
+  <table style="width: 100%">
     <tr>
-      <td>
-        <img
-          class="rounded float-left img-fluid"
-          src="/static/upload/{{upload_image}}"
-          alt=""
-        />
+      <td style="text-align: center">
+        <img style="height: 400px" class="rounded float-left img-fluid" src="/static/upload/{{upload_image}}" alt="" />
       </td>
-      <td>
-        <img
-          class="rounded float-right img-fluid"
-          src="/static/predict/{{upload_image}}"
-          alt=""
-        />
+      <td style="text-align: center">
+        <img style="height: 400px" class="rounded float-right img-fluid" src="/static/predict/{{upload_image}}"
+          alt="" />
       </td>
     </tr>
   </table>
   <br />
-  <table style="border: solid black; width: 100%">
-    <tr style="border: solid black">
-      <th>Cropped License Plate</th>
-      <th>Text</th>
+  <table style="border: solid; width: 50%; margin-left: auto; margin-right: auto">
+    <tr style="border: solid; background-color: #CFD2CF">
+      <th style="text-align: left">Cropped License Plate</th>
+      <th style="text-align: right">Number Plate</th>
     </tr>
-    <tr style="border: solid black">
-      <td>
-        <img 
-          style="max-height:64px"
-          class="img-fluid" 
-          src="/static/roi/{{upload_image}}" 
-          alt="" 
-        />
+    <tr>
+      <td style="text-align: left">
+        <img style="height: 50px" src="/static/roi/{{upload_image}}" alt="" />
       </td>
-      <td style="background-color: #c1dce0">
-        <h3 class="display-8">{{text}}</h3>
+      <td style="text-align: right">
+        <h3>{{text}}</h3>
       </td>
     </tr>
   </table>

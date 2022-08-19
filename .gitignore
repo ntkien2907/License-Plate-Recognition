@@ -160,4 +160,4 @@ cython_debug/
 .idea/
 
 static/
-yolov3/
+*.weights

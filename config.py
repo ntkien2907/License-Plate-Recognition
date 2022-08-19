@@ -9,7 +9,7 @@ YOLO_CONFIG = 'yolov3\\yolov3.cfg'
 CONF_THRESHOLD = 0.5
 NMS_THRESHOLD  = 0.4
 
-COLOR = (0, 0, 255)
+COLOR = (0, 255, 0)
 SCALE = 0.00392
 
 HOST = '0.0.0.0'
