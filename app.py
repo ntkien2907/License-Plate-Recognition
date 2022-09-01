@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from utils import *
+from helper import *
+import glob
 
 
 app  = Flask(__name__)
@@ -18,3 +19,8 @@ def index():
 
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT)
+    # Remove contents of predict folder and roi folder
+    DIRS = [PREDICT_PATH, ROI_PATH]
+    for dir in DIRS:
+        files = glob.glob(f'{dir}\\*')
+        for f in files: os.remove(f)
