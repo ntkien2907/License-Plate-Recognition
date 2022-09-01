@@ -1,4 +1,5 @@
 import os
+import re
 import cv2
 import numpy as np
 import pytesseract as pt
@@ -23,7 +24,7 @@ def get_output_layers(net):
     return output_layers
 
 
-def object_detection_yolo(img_path):
+def object_detection_yolov3(img_path):
     image = cv2.imread(img_path)
     w = image.shape[1]
     h = image.shape[0]
@@ -68,8 +69,17 @@ def object_detection_yolo(img_path):
     return n_coords
 
 
+def preprocess_number_plate(text):
+    nb_plate = re.sub('[\W_]+', '', text)
+    if len(nb_plate) == 0:
+        return None
+    prefix = re.search(r'(\d+)$', nb_plate).group()
+    nb_plate = nb_plate.replace(prefix, '-' + prefix)
+    return nb_plate
+
+
 def OCR(img_path, filename):
-    n_coords = object_detection_yolo(img_path)
+    n_coords = object_detection_yolov3(img_path)
     if len(n_coords) == 0:
         return None
     
@@ -82,13 +92,12 @@ def OCR(img_path, filename):
     
     pt.pytesseract.tesseract_cmd = TESSERACT_EXE
     text = pt.image_to_string(img_binary, lang='eng', config='--psm 6')
-    if len(text) == 0:
-        return None
-
-    save_text(filename, text)
-    cv2.rectangle(img, (xmin, ymin), (xmax, ymax), COLOR, 2)
-    cv2.imwrite(f'{PREDICT_PATH}\\{filename}', img)
-
+    text = preprocess_number_plate(text)
+    if text is not None:
+        save_text(filename, text)
+        cv2.rectangle(img, (xmin, ymin), (xmax, ymax), COLOR, 2)
+        cv2.imwrite(f'{PREDICT_PATH}\\{filename}', img)
+    
     return text
 
 
