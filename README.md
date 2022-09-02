@@ -5,7 +5,7 @@
 License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate. License plate detection and recognition is the technology that uses computer vision to detect and recognize a license plate from an input image of a car.
 <p align='middle'><img src='./assets/applications.png' width=100% /></p>
 
----
+
 ### Setup
 * The instruction below is done on Windows 10.
 * [Download](https://www.python.org/downloads/) python, and create virtual environment with specific python version.
@@ -21,7 +21,7 @@ License plate detection is identifying the part of the car that is predicted to 
     pip install -r requirements.txt
     ```
 
----
+
 ### How to use
 * Step 1:
     * For YOLOv3, download file [here](https://www.mediafire.com/file/a38cal86u81z3xc/yolov3.weights/file) and put into `yolov3` folder.
@@ -38,6 +38,6 @@ License plate detection is identifying the part of the car that is predicted to 
     ```
 <p align='middle'><img src='./assets/demo.png' width=100% /></p>
 
----
+
 ### References
 [Aslan Ahmedov (2022). Automatic Number Plate Recognition.](https://www.kaggle.com/datasets/aslanahmedov/number-plate-detection)
